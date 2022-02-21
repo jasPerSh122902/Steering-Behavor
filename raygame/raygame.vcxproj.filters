@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="HealthComp.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="SHOOT.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="Movement.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBCollider.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Charactor.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Componet.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform2D.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorArray.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleCollider.cpp">
+      <Filter>Sorce</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HealthComp.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Charactor.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorArray.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Componet.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScene.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform2D.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="SHOOT.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="Movement.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBCollider.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleCollider.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprite\Learth.png">
+      <Filter>Sprite</Filter>
+    </Image>
+    <Image Include="Sprite\Larrot.png">
+      <Filter>Sprite</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{9de0db04-98f8-49b6-8c11-1761d045c173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Componets">
+      <UniqueIdentifier>{56361bfb-3ddd-432d-8539-a0cc3912c0a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite">
+      <UniqueIdentifier>{a89030bc-6827-48d9-acc1-e99754d21e81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sorce">
+      <UniqueIdentifier>{c2da6b4a-bef3-4a69-afff-015e5a0a4cf0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
