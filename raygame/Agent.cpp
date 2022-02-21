@@ -1,36 +1,29 @@
 #include "Agent.h"
 #include "Sprite.h"
 
-Agent::Agent(int x, int y, const char* name)
-{
-	m_x = x;
-	m_y = y;
-}
 
-void Agent::setTargetActor(Actor* targetActor)
+
+
+Agent::Agent(int x, int y, const char* name, Actor* targetActor)
 {
-	if (m_targetActor = targetActor)
-	{
-		m_movementComp->getStarted();
-	}
+	m_targetActor = targetActor;
 }
 
 void Agent::start()
 {
 	Actor::start();
-
-	setTargetActor(m_targetActor);
-
-	m_movementComp = dynamic_cast<Movement*>(addComponent(new Movement()));
-	m_movementComp->setMaxSpeed(50);
+	
+	//addComponent(m_seekComponet);
+	SeekComponet* m_seekComponet = new SeekComponet("SeekComponet",m_player);
+	addComponent(m_seekComponet);
 	m_spriteComponet = dynamic_cast<Sprite*>(addComponent(new Sprite("Sprite/Larrot.png")));
+}
+
+void Agent::end()
+{
 }
 
 void Agent::update(float deltaTime)
 {
 	Actor::update(deltaTime);
-	//allows for movement
-	MathLibrary::Vector2 moveDirection = m_targetActor->getTransform() - m_agent->getTransform();
-
-	m_movementComp->setVelocity(moveDirection * 300);
 }

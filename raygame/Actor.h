@@ -14,9 +14,6 @@ private:
     Collider* m_collider;
 
 public:
-
-
-
     Actor();
     ~Actor();
 
@@ -124,9 +121,6 @@ public:
     /// <param name="actor_componet">the name of the componet instance</param>
     /// <returns></returns>
     bool removeComponent(const char* name);
-
-
-
 
 protected:
     const char* m_name;

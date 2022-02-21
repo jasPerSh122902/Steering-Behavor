@@ -1,28 +1,30 @@
 #pragma once
 #include "Actor.h"
+#include "Sprite.h"
+#include "Transform2D.h"
 #include "Movement.h"
 #include "Sprite.h"
+#include "SeekComponet.h"
+#include "Player.h"
 class Agent :
 	public Actor
 {
 private:
 	Agent* m_agent;
 	Actor* m_targetActor;
-	Movement* m_movementComp;
 	Sprite* m_spriteComponet;
-	int m_x;
-	int m_y;
-public:
-	Agent(int x , int y , const char * name);
-	void getTargetActor() { m_targetActor; }
+	Player* m_player;
 
-	void setTargetActor(Actor* targetActor);
+
+public:
+	Agent(int x, int y, const char* name, Actor* targetActor);
+
 
 	 /// <summary>
     /// Called during the first update after an actor is added to a scene.
     /// </summary>
-    void start() override;
-
-	void update(float deltaTime) override;
+	void start() override;
+	void end() override;
+	void update(float deltaTime);
 };
 

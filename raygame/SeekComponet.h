@@ -1,34 +1,26 @@
 #pragma once
 #include "Componet.h"
-#include <Vector2.h>
+#include "Transform2D.h"
 #include "Player.h"
-
+#include "Movement.h"
+#include "Transform2D.h"
 class SeekComponet :
 	public Componet
 {
 private:
-	//base comstroctor for the movement
-	SeekComponet(const char* name = "SeekComponet") : Componet::Componet(name) {}
-	void update(float deltaTime) override;
-
-	/// <summary>
-	/// Gets the current speed and direction of theis actor in the form of a velocity
-	/// </summary>
-	/// <returns></returns>
-	MathLibrary::Vector2 getVelocity() { return m_velocity; }
-
-	/// <summary>
-	/// Gets the current speed and direction of theis actor in the form of a velocity
-	/// </summary>
-	/// <returns></returns>
-	MathLibrary::Vector2 setVelocity(MathLibrary::Vector2 velocity) {m_velocity = velocity; }
-
-	int getMaxVelocity() { m_maxSpeed; }
-
-	int getMaxVelocity(float maxSpeed) { m_maxSpeed = maxSpeed; }
-public:
-	float m_maxSpeed;
+	int m_maxVelocity;
+	float m_seekForce = 45;
+	Player* m_player;
+	Actor* m_targetActor;
+	Movement* m_movementComp;
+	MathLibrary::Vector2 m_sterringForce;
+	MathLibrary::Vector2 m_desiredVelocity;
+	MathLibrary::Vector2 m_currentVelocity;
 	MathLibrary::Vector2 m_velocity;
-	Player m_player;
+	MathLibrary::Vector2 m_position;
+public:
+	SeekComponet(const char* name, Actor* targetActor);
+
+	void update(float deltaTime) override;
 };
 
