@@ -9,7 +9,6 @@ SeekComponet::SeekComponet(const char* name, Actor* targetActor)
 
 void SeekComponet::update(float deltaTime)
 {
-
 	m_desiredVelocity = MathLibrary::Vector2::normalize(m_targetActor->getTransform()->getLocalPosition() - getOwner()->getTransform()->getLocalPosition()) * m_seekForce;
 	m_sterringForce = m_desiredVelocity - m_currentVelocity;
 
