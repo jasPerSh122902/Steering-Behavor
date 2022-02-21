@@ -2,8 +2,6 @@
 #include "Componet.h"
 #include <Vector2.h>
 
-
-
 class Movement :
 	public Componet
 {

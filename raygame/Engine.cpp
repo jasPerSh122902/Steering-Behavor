@@ -1,9 +1,8 @@
 #include "Engine.h"
 #include "raylib.h"
 #include "Transform2D.h"
-#include "Player.h"
-#include "Enemy.h"
 #include "MainScene.h"
+
 
 bool Engine::m_applicationShouldClose = false;
 Scene** Engine::m_scenes = new Scene*;
@@ -31,12 +30,6 @@ void Engine::start()
 
 	Scene* scene = new Scene();
 
-	Player* player = new Player(10, 10, 10, 10, 10);
-	Enemy* enemy = new Enemy(19, 10, "enemy1", 10, 10, player);
-
-	scene->addActor(player);
-	scene->addActor(enemy);
-
 	//Start the scene
 	m_currentSceneIndex = addScene(new MainScene());
 	m_scenes[m_currentSceneIndex]->start();
@@ -47,7 +40,6 @@ void Engine::update(float deltaTime)
 {
 	//Clean up actors marked for destruction
 	destroyActorsInList();
-	
 
 	//Update scene
 	m_scenes[m_currentSceneIndex]->update(deltaTime);

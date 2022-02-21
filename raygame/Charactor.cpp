@@ -1,7 +1,7 @@
 #include "Charactor.h"
 #include "Movement.h"
 #include "Sprite.h"
-#include "HealthComp.h"
+//#include "HealthComp.h"
 
 Character::Character(float x, float y, const char* name, float speed, int maxHealth) :
 	Actor::Actor(x, y, name)
@@ -20,8 +20,8 @@ Character::~Character()
 /// </summary>
 void Character::start()
 {
-	HealthComp* healthComponent = new HealthComp(m_maxHealth, this);
-	addComponent(healthComponent);
+	//HealthComp* healthComponent = new HealthComp(m_maxHealth, this);
+	//addComponent(healthComponent);
 	Movement* moveComponent = new Movement("Movement");
 	addComponent(moveComponent);
 	Sprite* spriteComponent = new Sprite("Sprite/Larrot.png");

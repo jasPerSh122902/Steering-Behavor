@@ -3,10 +3,6 @@
 #include "Movement.h"
 #include "Sprite.h"
 
-//Player::Player(float x, float y, int health, float speed, int maxHealth)
-//{
-//}
-
 void Player::start()
 {
 	Actor::start();
@@ -16,10 +12,6 @@ void Player::start()
 	m_movementComponet->setMaxSpeed(500);
 	m_spriteComponet = dynamic_cast<Sprite*>(addComponent(new Sprite("Sprite/Learth.png")));
 
-
-	//Set spawn point here
-	//Set move speed
-	//Set position clamps
 }
 
 void Player::update(float deltaTime)

@@ -9,10 +9,7 @@ class Player :
 {
 public:
 
-    /// <param name="x">Position on the x axis</param>
-    /// <param name="y">Position on the y axis</param>
-    /// <param name="name">The name of this actor.</param>
-    //Player(float x, float y, int health, float speed, int maxHealth);
+    Player() {}
 
     Player(float x, float y, const char* name) : Actor(x, y, name) {}
 
