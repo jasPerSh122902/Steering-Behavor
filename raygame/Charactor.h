@@ -1,8 +1,8 @@
 #pragma once
 #include "Actor.h"
 #include <Vector2.h>
-
 class MovementComponet;
+
 
 class Character :
 	public Actor

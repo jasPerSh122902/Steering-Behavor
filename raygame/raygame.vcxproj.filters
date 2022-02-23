@@ -37,9 +37,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Sorce\Scene/Engine</Filter>
     </ClCompile>
-    <ClCompile Include="ActorArray.cpp">
-      <Filter>Sorce\Transform/ActorArray</Filter>
-    </ClCompile>
     <ClCompile Include="Transform2D.cpp">
       <Filter>Sorce\Transform/ActorArray</Filter>
     </ClCompile>
@@ -102,9 +99,6 @@
     <ClInclude Include="Player.h">
       <Filter>Header\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="ActorArray.h">
-      <Filter>Header\Transform/ActorArray</Filter>
-    </ClInclude>
     <ClInclude Include="Transform2D.h">
       <Filter>Header\Transform/ActorArray</Filter>
     </ClInclude>
@@ -125,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="RomingComponet.h">
       <Filter>Header\Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicArray.h">
+      <Filter>Header\Transform/ActorArray</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

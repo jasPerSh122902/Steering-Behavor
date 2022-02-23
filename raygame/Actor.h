@@ -1,4 +1,5 @@
 #pragma once
+#include <type_traits>
 class Transform2D;
 class Collider;
 
@@ -97,7 +98,16 @@ public:
     /// </summary>
     /// <param name="actor_componet"></param>
     /// <returns></returns>
-    Componet* addComponent(Componet* actor_componet);
+    template<typename T>
+    T* addComponent();
+
+    /// <summary>
+    /// adds the first componet instace attached to this actor
+    /// that mathches the name
+    /// </summary>
+    /// <param name="actor_componet"></param>
+    /// <returns></returns>
+    Componet* addComponent(Componet* componet);
 
     /// <summary>
     /// gets the first componet instace attached to this actor
@@ -105,7 +115,8 @@ public:
     /// </summary>
     /// <param name="actor_componet">the name of the componet instance</param>
     /// <returns></returns>
-    Componet* getComponent(const char* componetName);
+    template<typename T>
+    T* getComponent();
 
     /// <summary>
     /// removes the first componet instace attached to this actor
@@ -120,8 +131,96 @@ public:
     /// </summary>
     /// <param name="actor_componet">the name of the componet instance</param>
     /// <returns></returns>
-    bool removeComponent(const char* name);
+    template<typename T>
+    bool removeComponent();
+
+
+
 
 protected:
     const char* m_name;
 };
+
+template<typename T>
+inline T* Actor::addComponent()
+{
+    T* actor_componet = new T();
+    //returns null if this componet has an owner already
+    Actor* owner = actor_componet->getOwner();
+    if (owner)
+        return nullptr;
+
+    actor_componet->assignOwner(this);
+
+    //Create a new array with a size one greater than our old array
+    Componet** tempArray = new Componet * [m_componetsCount + 1];
+    //Copy the values form the old array to the new array
+    for (int i = 0; i < m_componetsCount; i++)
+    {
+        tempArray[i] = m_componet[i];
+    }
+
+    //Set the last value in the new array
+    tempArray[m_componetsCount] = actor_componet;
+    if (m_componetsCount > 1)
+        delete[] m_componet;
+
+    else if (m_componetsCount == 1)
+        delete m_componet;
+    m_componet = tempArray;
+    //increments the counter
+    m_componetsCount++;
+    //returns the pointer
+    return (T*)actor_componet;
+}
+
+template<typename T>
+inline T* Actor::getComponent()
+{
+    //Iterates through the componet array...
+    for (int i = 0; i < m_componetsCount; i++)
+    {
+        T* temp = dynamic_cast<T*>(m_componet[i]);
+        //Return the componetnt if the name is the same as the current componet
+        if (temp)
+            return (T*)m_componet[i];
+    }
+    //returns nullprtr if the componet is not in the list
+    return nullptr;
+}
+
+template<typename T>
+inline bool Actor::removeComponent()
+{
+    bool componentRemoved = false;
+    //Create a new array with a size one less than our old array
+    Componet** newArray = new Componet * [m_componetsCount - 1];
+
+    //Create variable to access tempArray index
+    int j = 0;
+    //Copy values from the old array to the new array
+    for (int i = 0; i < m_componetsCount; i++)
+    {
+        T* temp = dynamic_cast<T*>(m_componet[i]);
+        if (!temp)
+        {
+            newArray[j] = m_componet[i];
+            j++;
+        }
+        else
+            componentRemoved = true;
+    }
+    //checks to see if The removed is true...
+    if (componentRemoved)
+    {
+        delete[] m_componet;
+        //...sets the old array to the new array
+        m_componet = newArray;
+        m_componetsCount--;//decrements the counter.
+        //deletes the componet
+        delete(m_componet);
+    }
+    delete[] newArray;
+    //Return whether or not the removal was successful
+    return componentRemoved;
+}

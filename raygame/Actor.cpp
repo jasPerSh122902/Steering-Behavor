@@ -20,7 +20,6 @@ Actor::Actor(float x, float y, const char* name = "Actor")
     m_transform = new Transform2D(this);
     m_transform->setLocalPosition({ x,y });
     m_name = name;
-    m_componetsCount = 0;
 }
 
 void Actor::start()
@@ -57,19 +56,6 @@ Componet* Actor::addComponent(Componet* actor_componet)
     m_componetsCount++;
     //returns the pointer
     return actor_componet;
-}
-
-Componet* Actor::getComponent(const char* componetName)
-{
-    //Iterates through the componet array...
-    for (int i = 0; i < m_componetsCount; i++)
-    {
-        //Return the componetnt if the name is the same as the current componet
-        if (strcmp(m_componet[i]->getName(), componetName) == 0)
-            return m_componet[i];
-    }
-    //returns nullprtr if the componet is not in the list
-    return nullptr;
 }
 
 bool Actor::removeComponent(Componet* componet)
@@ -109,52 +95,6 @@ bool Actor::removeComponent(Componet* componet)
     return componentRemoved;
 }
 
-bool Actor::removeComponent(const char* name)
-{
-    if (!name)
-        return false;
-
-    bool componentRemoved = false;
-    //Create a new array with a size one less than our old array
-    Componet* componetoDelete = nullptr;
-
-    Componet** newArray = new Componet * [m_componetsCount - 1];
-
-    //Create variable to access tempArray index
-    int j = 0;
-    //Copy values from the old array to the new array
-    for (int i = 0; i < m_componetsCount; i++)
-    {
-        //checks to see if the name of the componet and the name is equal
-        if (strcmp(m_componet[i]->getName(), name) == 0)
-        {
-            //makes the new array equal to the old array
-            newArray[j] = m_componet[i];
-            //increment j
-            j++;
-        }
-        else
-        {
-            componentRemoved = true;
-            componetoDelete = m_componet[i];
-        }
-
-    }
-    //checks to see if The removed is true...
-    if (componentRemoved)
-    {
-        delete[] m_componet;
-        //...sets the old array to the new array
-        m_componet = newArray;
-        m_componetsCount--;//decrements the counter.
-        //deletes the componet
-        delete componetoDelete;
-    }
-    else
-        delete[] newArray;
-    //Return whether or not the removal was successful
-    return componentRemoved;
-}
 
 void Actor::update(float deltaTime)
 {
