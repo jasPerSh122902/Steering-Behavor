@@ -2,10 +2,11 @@
 #include "Actor.h"
 #include "MovementComponet.h"
 
-SeekComponet::SeekComponet( Actor* targetActor)
+SeekComponet::SeekComponet( Actor* targetActor, int orderValue)
 {
 	m_targetActor = targetActor;
 	m_seekForce = 150;
+	m_orderValue = orderValue;
 }
 
 void SeekComponet::update(float deltaTime)
