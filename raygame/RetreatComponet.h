@@ -3,8 +3,8 @@
 #include "Transform2D.h"
 #include "MovementComponet.h"
 #include "Transform2D.h"
-class SeekComponet :
-	public Componet
+class RetreatComponet :
+    public MovementComponet
 {
 private:
 	float m_seekForce;
@@ -14,7 +14,7 @@ private:
 	MathLibrary::Vector2 m_desiredVelocity;
 	MathLibrary::Vector2 m_currentVelocity;
 public:
-	SeekComponet( Actor* targetActor);
+	RetreatComponet(Actor* targetActor);
 
 	Actor* getTarget() const { return m_targetActor; }
 	void setTarget(Actor* targetActor) { m_targetActor = targetActor; }

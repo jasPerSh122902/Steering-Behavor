@@ -1,17 +1,16 @@
 #pragma once
-#include "Actor.h"
-class Input;
-class Movement;
-class Sprite;
+#include "Charactor.h"
+class InputComponet;
+class MovementComponet;
 
 class Player :
-    public Actor
+    public Character
 {
 public:
 
-    Player() {}
+    Player(float x, float y, const char* name, float speed, int maxHealth);
 
-    Player(float x, float y, const char* name) : Actor(x, y, name) {}
+    ~Player() {}
 
     /// <summary>
     /// Called during the first update after an actor is added to a scene.
@@ -20,7 +19,6 @@ public:
     void update(float deltaTime) override;
 
 private:
-    Input* m_inputComponet;
-    Movement* m_movementComponet;
-    Sprite* m_spriteComponet;
+    InputComponet* m_inputComponet;
+    MovementComponet* m_movementComponet;
 };

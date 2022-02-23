@@ -20,6 +20,7 @@ Actor::Actor(float x, float y, const char* name = "Actor")
     m_transform = new Transform2D(this);
     m_transform->setLocalPosition({ x,y });
     m_name = name;
+    m_componetsCount = 0;
 }
 
 void Actor::start()

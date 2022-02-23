@@ -1,13 +1,13 @@
 #include "Charactor.h"
-#include "Movement.h"
-#include "Sprite.h"
+#include "MovementComponet.h"
+#include "SpriteComponet.h"
 //#include "HealthComp.h"
 
 Character::Character(float x, float y, const char* name, float speed, int maxHealth) :
 	Actor::Actor(x, y, name)
 {
 	m_speed = speed;
-	m_firingCooldown = 0.3f;
+	m_firingCooldown = 0.6f;
 	m_maxHealth = maxHealth;
 }
 
@@ -20,12 +20,13 @@ Character::~Character()
 /// </summary>
 void Character::start()
 {
-	//HealthComp* healthComponent = new HealthComp(m_maxHealth, this);
-	//addComponent(healthComponent);
-	Movement* moveComponent = new Movement("Movement");
-	addComponent(moveComponent);
-	Sprite* spriteComponent = new Sprite("Sprite/Larrot.png");
+	/*Movement* moveComponent = new Movement("MoveComponet");
+	addComponent(moveComponent);*/
+	m_moveComponet = dynamic_cast<MovementComponet*>(addComponent(new MovementComponet()));
+	SpriteComponet* spriteComponent = new SpriteComponet("Sprite/Larrot.png");
 	addComponent(spriteComponent);
+
+	Actor::start();
 }
 
 /// <summary>

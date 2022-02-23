@@ -156,14 +156,15 @@
     <ClCompile Include="Componet.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Engine.cpp" />
-    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="InputComponet.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
-    <ClCompile Include="Movement.cpp" />
+    <ClCompile Include="MovementComponet.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RetreatComponet.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SeekComponet.cpp" />
-    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpriteComponet.cpp" />
     <ClCompile Include="Transform2D.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,13 +178,14 @@
     <ClInclude Include="Componet.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Engine.h" />
-    <ClInclude Include="Input.h" />
+    <ClInclude Include="InputComponet.h" />
     <ClInclude Include="MainScene.h" />
-    <ClInclude Include="Movement.h" />
+    <ClInclude Include="MovementComponet.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="RetreatComponet.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SeekComponet.h" />
-    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteComponet.h" />
     <ClInclude Include="Transform2D.h" />
   </ItemGroup>
   <ItemGroup>

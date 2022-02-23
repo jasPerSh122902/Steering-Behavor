@@ -1,26 +1,22 @@
 #include "Player.h"
-#include "Input.h"
-#include "Movement.h"
-#include "Sprite.h"
+#include "InputComponet.h"
+#include "MovementComponet.h"
+#include "SpriteComponet.h"
+
+Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
+	Character(x, y, name, speed, maxHealth)
+{}
 
 void Player::start()
 {
-	Actor::start();
-
-	m_inputComponet = dynamic_cast<Input*>(addComponent(new Input()));
-	m_movementComponet = dynamic_cast<Movement*>(addComponent(new Movement()));
-	m_movementComponet->setMaxSpeed(500);
-	m_spriteComponet = dynamic_cast<Sprite*>(addComponent(new Sprite("Sprite/Learth.png")));
-
+	Character::start();
+	m_inputComponet = dynamic_cast<InputComponet*>(addComponent(new InputComponet(this)));
 }
 
 void Player::update(float deltaTime)
 {
-	Actor::update(deltaTime);
 	//allows for movement
-	MathLibrary::Vector2 moveDirection = m_inputComponet->getMoveAxis();
-
-	m_movementComponet->setVelocity(moveDirection * 300);
-
-
+	Character::getTheMoveComponet()->setVelocity(m_inputComponet->getMoveAxis() * Character::getSpeed());
+	//m_movementComponet->setVelocity(m_inputComponet->getMoveAxis());
+	Character::update(deltaTime);
 }

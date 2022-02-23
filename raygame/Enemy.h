@@ -1,14 +1,11 @@
 #pragma once
-#include "Actor.h"
-class Input;
-class Movement;
-class Sprite;
+#include "Charactor.h"
 
 class Enemy :
-	public Actor
+	public Character
 {
 public:
-	Enemy(float x, float y, const char* name, Actor* targetActor);
+	Enemy(float x, float y, const char* name, float speed, int maxHealth, Actor* targetActor);
 	~Enemy() {}
 
 	void start() override;
@@ -16,8 +13,5 @@ public:
 
 private:
 	Actor* m_targetActor;
-	Input* m_inputComponet;
-	Movement* m_movementComponet;
-	Sprite* m_spriteComponet;
 };
 

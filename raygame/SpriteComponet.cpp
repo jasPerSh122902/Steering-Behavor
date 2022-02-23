@@ -1,27 +1,28 @@
-#include "Sprite.h"
+
+#include "SpriteComponet.h"
 #include "Actor.h"
 #include "Transform2D.h"
 #include <raylib.h>
 #include <Matrix3.h>
 #include <cmath>
 
-Sprite::Sprite(Texture2D* texture, const char* name)
+SpriteComponet::SpriteComponet(Texture2D* texture, const char* name)
 {
 	texture = m_texture;
 }
 
-Sprite::Sprite(const char* path, const char* name) : Componet::Componet(name)
+SpriteComponet::SpriteComponet(const char* path, const char* name) : Componet::Componet(name)
 {
 	m_texture = new Texture2D(RAYLIB_H::LoadTexture(path));
 }
 
-Sprite::~Sprite()
+SpriteComponet::~SpriteComponet()
 {
 	RAYLIB_H::UnloadTexture(*m_texture);
 	delete(m_texture);
 }
 
-void Sprite::draw()
+void SpriteComponet::draw()
 {
 	//Gets the Scale of the global matrix
 	m_width = getOwner()->getTransform()->getScale().x;

@@ -1,10 +1,9 @@
 #include "Enemy.h"
-#include "Input.h"
-#include "Movement.h"
-#include "Sprite.h"
+#include "SeekComponet.h"
+#include "RetreatComponet.h"
 
-Enemy::Enemy(float x, float y, const char* name, Actor* targetActor) :
-	Actor(x, y, name)
+Enemy::Enemy(float x, float y, const char* name,float speed, int maxHealth, Actor* targetActor) :
+	Character(x, y, name, speed, maxHealth)
 {
 	m_targetActor = targetActor;
 }
@@ -13,16 +12,15 @@ Enemy::Enemy(float x, float y, const char* name, Actor* targetActor) :
 
 void Enemy::start()
 {
-	m_movementComponet = dynamic_cast<Movement*>(addComponent(new Movement()));
-	m_movementComponet->setMaxSpeed(50);
-	m_spriteComponet = dynamic_cast<Sprite*>(addComponent(new Sprite("Sprite/Larrot.png")));
+	Character::start();
+
+	/*SeekComponet* seekBehaveor = new SeekComponet(m_targetActor);
+	addComponent(seekBehaveor);*/
+	RetreatComponet* retreatComponet = new RetreatComponet(m_targetActor);
+	addComponent(retreatComponet);
 }
 
 void Enemy::update(float deltaTime)
 {
-	Actor::update(deltaTime);
-	//allows for movement
-	MathLibrary::Vector2 moveDirection = m_inputComponet->getMoveAxis();
-
-	m_movementComponet->setVelocity(moveDirection * 30);
+	Character::update(deltaTime);
 }

@@ -1,17 +1,18 @@
-#include "SeekComponet.h"
+#include "RetreatComponet.h"
 #include "Actor.h"
 #include "MovementComponet.h"
-SeekComponet::SeekComponet( Actor* targetActor)
+
+RetreatComponet::RetreatComponet(Actor* targetActor)
 {
-	
 	m_targetActor = targetActor;
 	m_seekForce = 150;
 }
 
-void SeekComponet::update(float deltaTime)
+void RetreatComponet::update(float deltaTime)
 {
-	m_desiredVelocity = MathLibrary::Vector2::normalize(getTarget()->getTransform()->getWorldPosition() - getOwner()->getTransform()->getWorldPosition()) * m_seekForce;
-	
+
+	m_desiredVelocity = MathLibrary::Vector2::normalize(getOwner()->getTransform()->getWorldPosition() - getTarget()->getTransform()->getWorldPosition()) * m_seekForce;
+
 	MovementComponet* movement = dynamic_cast<MovementComponet*>(getOwner()->getComponent("MoveComponet"));
 
 	//m_movementComp->getOwner()->getComponent("MoveComponet");
@@ -19,4 +20,3 @@ void SeekComponet::update(float deltaTime)
 
 	movement->setVelocity(movement->getVelocity() + m_sterringForce * deltaTime);
 }
-
