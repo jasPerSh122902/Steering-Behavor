@@ -20,9 +20,9 @@ Componet::~Componet()
 
 void Componet::assignOwner(Actor* owner)
 {
-	if (getOwner())
-		return;
-
+	if (getOwner())//if this returns true then return...
+		return;//returns the same owner
+	//sets the owner varable to the ower that was put in
 	m_owner = owner;
 }
 

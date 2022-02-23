@@ -13,7 +13,7 @@ public:
 	Agent();
 	~Agent();
 
-	//tring to get its actor
+	//gets is target
 	Actor* getTarget() { return m_targetActor; }
 };
 

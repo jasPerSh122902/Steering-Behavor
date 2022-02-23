@@ -17,6 +17,7 @@ void Player::update(float deltaTime)
 {
 	//allows for movement
 	Character::getTheMoveComponet()->setVelocity(m_inputComponet->getMoveAxis() * Character::getSpeed());
+	//this will break the retreat and seek
 	//m_movementComponet->setVelocity(m_inputComponet->getMoveAxis());
 	Character::update(deltaTime);
 }

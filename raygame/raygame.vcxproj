@@ -162,6 +162,7 @@
     <ClCompile Include="MovementComponet.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RetreatComponet.cpp" />
+    <ClCompile Include="RomingComponet.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SeekComponet.cpp" />
     <ClCompile Include="SpriteComponet.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="MovementComponet.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RetreatComponet.h" />
+    <ClInclude Include="RomingComponet.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SeekComponet.h" />
     <ClInclude Include="SpriteComponet.h" />

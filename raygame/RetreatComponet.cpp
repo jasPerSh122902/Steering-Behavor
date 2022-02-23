@@ -10,13 +10,14 @@ RetreatComponet::RetreatComponet(Actor* targetActor)
 
 void RetreatComponet::update(float deltaTime)
 {
-
+	//gets the distence between the owner and the target
 	m_desiredVelocity = MathLibrary::Vector2::normalize(getOwner()->getTransform()->getWorldPosition() - getTarget()->getTransform()->getWorldPosition()) * m_seekForce;
-
+	//makes a pointer to the movecomponet and casts it as a movement componet pointer...
+	//..to get its owners componet that is "MoveComponet"
 	MovementComponet* movement = dynamic_cast<MovementComponet*>(getOwner()->getComponent("MoveComponet"));
-
+	//will break the seek and retreat
 	//m_movementComp->getOwner()->getComponent("MoveComponet");
-	m_sterringForce = m_desiredVelocity - movement->getVelocity();
-
+	m_sterringForce = m_desiredVelocity - movement->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity
+	//give the thing movement and add it to the vector
 	movement->setVelocity(movement->getVelocity() + m_sterringForce * deltaTime);
 }

@@ -12,7 +12,6 @@ private:
 	MovementComponet* m_movementComp;
 	MathLibrary::Vector2 m_sterringForce;
 	MathLibrary::Vector2 m_desiredVelocity;
-	MathLibrary::Vector2 m_currentVelocity;
 public:
 	RetreatComponet(Actor* targetActor);
 

@@ -9,18 +9,21 @@ class SeekComponet :
 private:
 	float m_seekForce;
 	Actor* m_targetActor;
-	MovementComponet* m_movementComp;
+	//this is for example
+	//MovementComponet* m_movementComp;
+	
+	//these are the two forces that are used--
 	MathLibrary::Vector2 m_sterringForce;
 	MathLibrary::Vector2 m_desiredVelocity;
-	MathLibrary::Vector2 m_currentVelocity;
+	//----------------------------------------
 public:
-	SeekComponet( Actor* targetActor);
+	SeekComponet(Actor* targetActor);//takes in a targe to work
 
-	Actor* getTarget() const { return m_targetActor; }
-	void setTarget(Actor* targetActor) { m_targetActor = targetActor; }
+	Actor* getTarget() const { return m_targetActor; }//gets u back the target that is has
+	void setTarget(Actor* targetActor) { m_targetActor = targetActor; }//set that target that it takes in
 
-	float getForce() { return  m_seekForce; }
-	void setForce(float seekForce) { m_seekForce = seekForce; }
+	float getForce() { return  m_seekForce; }//gets u back the force it has
+	void setForce(float seekForce) { m_seekForce = seekForce; }//sets the force to the force that is put in
 
 	void update(float deltaTime) override;
 };
