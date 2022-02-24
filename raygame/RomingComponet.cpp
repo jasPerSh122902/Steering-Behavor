@@ -34,10 +34,9 @@ void RomingComponet::update(float deltaTime)
 								  getOwner()->getTransform()->getWorldPosition().y + getTheRand() - getTarget()->getTransform()->getWorldPosition().y };*/
 
 			m_desiredVelocity = { getOwner()->getTransform()->getWorldPosition().x + getTheRand(), getOwner()->getTransform()->getWorldPosition().y + getTheRand() };
-			//m_desiredVelocity = MathLibrary::Vector2::Vector2(getOwner()->getTransform()->getWorldPosition().x + getTheRand(), getOwner()->getTransform()->getWorldPosition().y + getTheRand());
-			MovementComponet* movement = dynamic_cast<MovementComponet*>(getOwner()->getComponent("MoveComponet"));
+			MovementComponet* movement = new MovementComponet();
+			movement->getOwner()->getComponent<MovementComponet>();
 			//This way will break the reatreat and seek so dont do it
-			//m_movementComp->getOwner()->getComponent("MoveComponet");
 			m_sterringForce = m_desiredVelocity - movement->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity
 			//give the thing movement and add it to the vector
 			movement->setVelocity(movement->getVelocity() + m_sterringForce * deltaTime);

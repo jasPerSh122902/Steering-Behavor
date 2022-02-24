@@ -1,5 +1,6 @@
 #pragma once
 #include "Charactor.h"
+#include "MovementComponet.h"
 
 class Enemy :
 	public Character
@@ -13,5 +14,6 @@ public:
 
 private:
 	Actor* m_targetActor;
+	MovementComponet* m_moveMentComponet;
 };
 

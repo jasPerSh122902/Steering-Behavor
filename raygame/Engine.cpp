@@ -40,7 +40,6 @@ void Engine::start()
 void Engine::update(float deltaTime)
 {
 	//Clean up actors marked for destruction
-	destroyActorsInList();
 
 	//Update scene
 	m_scenes[m_currentSceneIndex]->update(deltaTime);
@@ -136,7 +135,7 @@ int Engine::addScene(Scene* scene)
 void Engine::addActorToDeletionList(Actor* actor)
 {
 	//return if the actor is already going to be deleted
-	if (m_actorsToDelete.contains(actor))
+	if (m_actorsToDelete.contains(&actor))
 		return;
 
 	//Add actor to deletion list

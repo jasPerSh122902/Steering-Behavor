@@ -21,6 +21,8 @@ public:
 	float getForce() { return  m_seekForce; }
 	void setForce(float seekForce) { m_seekForce = seekForce; }
 
+	void setMovementComp(MovementComponet* movemMentComp) { m_movementComp = movemMentComp; }
+
 	void update(float deltaTime) override;
 };
 
