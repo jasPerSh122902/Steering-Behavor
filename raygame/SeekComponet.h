@@ -1,10 +1,10 @@
 #pragma once
-#include "Componet.h"
+#include "SteeringComponet.h"
 #include "Transform2D.h"
 #include "MovementComponet.h"
 #include "Transform2D.h"
 class SeekComponet :
-	public Componet
+	public SteeringComponet
 {
 private:
 	float m_seekForce;
@@ -18,7 +18,7 @@ private:
 	MathLibrary::Vector2 m_desiredVelocity;
 	//----------------------------------------
 public:
-	SeekComponet(Actor* targetActor , int orderValue);//takes in a targe to work
+	SeekComponet(Actor* targetActor ,Actor* owner, int orderValue);//takes in a targe to work
 
 	Actor* getTarget() const { return m_targetActor; }//gets u back the target that is has
 	void setTarget(Actor* targetActor) { m_targetActor = targetActor; }//set that target that it takes in

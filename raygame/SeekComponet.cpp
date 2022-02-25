@@ -2,7 +2,7 @@
 #include "Actor.h"
 #include "MovementComponet.h"
 
-SeekComponet::SeekComponet( Actor* targetActor, int orderValue)
+SeekComponet::SeekComponet( Actor* targetActor,Actor* owner, int orderValue) : SteeringComponet::SteeringComponet(owner)
 {
 	m_targetActor = targetActor;
 	m_seekForce = 150;
@@ -15,7 +15,7 @@ void SeekComponet::update(float deltaTime)
 	m_desiredVelocity = MathLibrary::Vector2::normalize(getTarget()->getTransform()->getWorldPosition() - getOwner()->getTransform()->getWorldPosition()) * m_seekForce;
 	//makes a pointer to the movecomponet and casts it as a movement componet pointer...
 	//..to get its owners componet that is "MoveComponet"
-	MovementComponet* movement = new MovementComponet();
+	MovementComponet* movement = new MovementComponet(movement->getOwner());
 	movement->getOwner()->getComponent<MovementComponet>();
 	//This way will break the reatreat and seek so dont do it
 	m_sterringForce = m_desiredVelocity - movement->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity

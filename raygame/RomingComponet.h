@@ -2,8 +2,9 @@
 #include "Componet.h"
 #include "raymath.h"
 #include "Transform2D.h"
+#include "SteeringComponet.h"
 class RomingComponet :
-    public Componet
+    public SteeringComponet
 {
 public:
     RomingComponet(Actor* owner,Actor* targetActor, int radius, int orderValue);

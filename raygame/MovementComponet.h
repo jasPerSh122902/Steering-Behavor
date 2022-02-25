@@ -1,13 +1,13 @@
 #pragma once
 #include <Vector2.h>
-#include "Componet.h"
+#include "SteeringComponet.h"
 
 class MovementComponet :
-	public Componet
+	public SteeringComponet
 {
 public:
 	//base comstroctor for the movement
-	MovementComponet(const char* name = "MoveComponet");
+	MovementComponet(Actor* actor);
 
 	/// <summary>
 	/// Gets the current speed and direction of theis actor in the form of a velocity

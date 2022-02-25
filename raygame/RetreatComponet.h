@@ -1,10 +1,10 @@
 #pragma once
-#include "Componet.h"
+#include "SteeringComponet.h"
 #include "Transform2D.h"
 #include "MovementComponet.h"
 #include "Transform2D.h"
 class RetreatComponet :
-    public MovementComponet
+    public SteeringComponet
 {
 private:
 	float m_seekForce;
@@ -13,7 +13,7 @@ private:
 	MathLibrary::Vector2 m_sterringForce;
 	MathLibrary::Vector2 m_desiredVelocity;
 public:
-	RetreatComponet(Actor* targetActor);
+	RetreatComponet(Actor* targetActor, Actor* owner);
 
 	Actor* getTarget() const { return m_targetActor; }
 	void setTarget(Actor* targetActor) { m_targetActor = targetActor; }

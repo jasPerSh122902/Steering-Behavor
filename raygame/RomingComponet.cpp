@@ -4,7 +4,7 @@
 #include <iostream>
 #include <time.h>
 
-RomingComponet::RomingComponet(Actor* owner,Actor* targetActor, int radius, int orderValue)
+RomingComponet::RomingComponet(Actor* owner,Actor* targetActor, int radius, int orderValue) : SteeringComponet::SteeringComponet(owner)
 {
 	m_owner = owner;
 	m_radius = radius;
@@ -31,7 +31,7 @@ void RomingComponet::update(float deltaTime)
 			//then normalize
 			//scale it up by the radius
 			m_desiredVelocity = { getOwner()->getTransform()->getWorldPosition().x + getTheRand(), getOwner()->getTransform()->getWorldPosition().y + getTheRand() };
-			MovementComponet* movement = new MovementComponet();
+			MovementComponet* movement = new MovementComponet(m_owner);
 			movement->getOwner()->getComponent<MovementComponet>();
 			//This way will break the reatreat and seek so dont do it
 			m_sterringForce = m_desiredVelocity - movement->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity

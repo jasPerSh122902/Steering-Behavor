@@ -3,7 +3,7 @@
 #include "Transform2D.h"
 #include "Componet.h"
 
-MovementComponet::MovementComponet(const char* name) : Componet::Componet(name)
+MovementComponet::MovementComponet(Actor* actor) : SteeringComponet::SteeringComponet(actor)
 {
 	m_maxSpeed = 100;
 	m_velocity = MathLibrary::Vector2(0, 0);
