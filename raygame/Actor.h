@@ -134,7 +134,7 @@ public:
     template<typename T>
     bool removeComponent();
 
-
+    virtual void onAddComponet(Componet* comp);
 
 
 protected:

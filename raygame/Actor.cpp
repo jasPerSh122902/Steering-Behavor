@@ -95,6 +95,10 @@ bool Actor::removeComponent(Componet* componet)
     return componentRemoved;
 }
 
+void Actor::onAddComponet(Componet* comp)
+{
+}
+
 
 void Actor::update(float deltaTime)
 {
