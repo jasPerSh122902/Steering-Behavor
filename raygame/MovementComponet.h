@@ -35,6 +35,4 @@ private:
 
 	float m_maxSpeed;
 	MathLibrary::Vector2 m_velocity;
-
-
 };

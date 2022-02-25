@@ -27,12 +27,9 @@ void RomingComponet::update(float deltaTime)
 		DrawCircle(getOwner()->getTransform()->getWorldPosition().x + 55, getOwner()->getTransform()->getWorldPosition().y + 55, m_radius, YELLOW);
 		if (m_alowedToMove)
 		{
-			//pick a rangom value on that circle
-			//DrawLine(getOwner()->getTransform()->getLocalPosition().x, getOwner()->getTransform()->getLocalPosition().y, getTheRand(), getTheRand(), GOLD);
-			//getTheRand();
-		/*	m_desiredVelocity = { getOwner()->getTransform()->getWorldPosition().x + getTheRand() - getTarget()->getTransform()->getWorldPosition().x,
-								  getOwner()->getTransform()->getWorldPosition().y + getTheRand() - getTarget()->getTransform()->getWorldPosition().y };*/
-
+			//How to do (find a direction)
+			//then normalize
+			//scale it up by the radius
 			m_desiredVelocity = { getOwner()->getTransform()->getWorldPosition().x + getTheRand(), getOwner()->getTransform()->getWorldPosition().y + getTheRand() };
 			MovementComponet* movement = new MovementComponet();
 			movement->getOwner()->getComponent<MovementComponet>();

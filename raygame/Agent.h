@@ -1,19 +1,25 @@
 #pragma once
 #include "Actor.h"
-#include "Player.h"
+#include "DynamicArray.h"
+#include "SteeringComponet.h"
+#include "MovementComponet.h"
+
 class Agent :
 	public Actor
 {
 private:
 	//actors that are seeked
-	Actor* m_targetActor;
-	Player* m_playerpointer;
+	float m_maxForce;
+	float m_maxVelocity;
+	float m_force;
+	MovementComponet* m_moveComponet;
+	DynamicArray<SteeringComponet* > m_steeringCompont;
 public:
 	//basic constuctor for the agent
 	Agent();
 	~Agent();
-
-	//gets is target
-	Actor* getTarget() { return m_targetActor; }
+	void onAddComponet(Componet* comp);
+	float getforce() { return m_force; }
+	float setForce(float force) { m_force = force; }
 };
 

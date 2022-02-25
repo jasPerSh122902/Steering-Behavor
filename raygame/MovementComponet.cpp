@@ -11,7 +11,6 @@ MovementComponet::MovementComponet(const char* name) : Componet::Componet(name)
 
 void MovementComponet::update(float deltaTime)
 {
-
 	if (m_velocity.getMagnitude() > m_maxSpeed){//the magnitude is greater than the max speed meanign that it is over the max speed
 		m_velocity = m_velocity.getNormalized() * m_maxSpeed;//set the velocity to the velocity but normalized and mulitiplied by the max speed
 	}

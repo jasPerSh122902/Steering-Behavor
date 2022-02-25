@@ -1,6 +1,7 @@
 #pragma once
 #include "Charactor.h"
 #include "MovementComponet.h"
+#include "RetreatComponet.h"
 
 class Enemy :
 	public Character
@@ -15,5 +16,6 @@ public:
 private:
 	Actor* m_targetActor;
 	MovementComponet* m_moveMentComponet;
+	RetreatComponet* m_retreatComponet;
 };
 

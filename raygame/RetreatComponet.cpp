@@ -16,8 +16,7 @@ void RetreatComponet::update(float deltaTime)
 	//..to get its owners componet that is "MoveComponet"
 	MovementComponet* movement = new MovementComponet();
 	//will break the seek and retreat
-
 	m_sterringForce = m_desiredVelocity - movement->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity
 	//give the thing movement and add it to the vector
-	movement->setVelocity((movement->getVelocity().x + m_sterringForce.x) * deltaTime, (movement->getVelocity().y + m_sterringForce.y) * deltaTime);
+	movement->setVelocity(movement->getVelocity() + m_sterringForce * deltaTime);
 }
