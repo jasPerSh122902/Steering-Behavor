@@ -55,6 +55,7 @@ Componet* Actor::addComponent(Componet* actor_componet)
     //increments the counter
     m_componetsCount++;
     //returns the pointer
+    onAddComponet(actor_componet);
     return actor_componet;
 }
 
@@ -95,7 +96,7 @@ bool Actor::removeComponent(Componet* componet)
     return componentRemoved;
 }
 
-void Actor::onAddComponet(Componet* comp)
+void Actor::onAddComponet(Componet* component)
 {
 }
 

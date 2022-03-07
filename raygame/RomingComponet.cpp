@@ -3,7 +3,7 @@
 #include "Actor.h"
 #include <time.h>
 
-RomingComponet::RomingComponet(Actor* owner,Actor* targetActor, int radius, int orderValue) : SteeringComponet::SteeringComponet(owner)
+RomingComponet::RomingComponet(Actor* owner,Actor* targetActor, int radius, int orderValue) 
 {
 	m_owner = owner;
 	m_radius = radius;

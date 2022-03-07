@@ -98,8 +98,8 @@ public:
     /// </summary>
     /// <param name="actor_componet"></param>
     /// <returns></returns>
-    template<typename T>
-    T* addComponent();
+    //template<typename T>
+  //  T* addComponent();
 
     /// <summary>
     /// adds the first componet instace attached to this actor
@@ -134,45 +134,13 @@ public:
     template<typename T>
     bool removeComponent();
 
-    virtual void onAddComponet(Componet* comp);
-
+    virtual void onAddComponet(Componet* component);//called whenever a component is added to the actor
 
 protected:
     const char* m_name;
 };
 
-template<typename T>
-inline T* Actor::addComponent()
-{
-    T* actor_componet = new T();
-    //returns null if this componet has an owner already
-    Actor* owner = actor_componet->getOwner();
-    if (owner)
-        return nullptr;
 
-    actor_componet->assignOwner(this);
-
-    //Create a new array with a size one greater than our old array
-    Componet** tempArray = new Componet * [m_componetsCount + 1];
-    //Copy the values form the old array to the new array
-    for (int i = 0; i < m_componetsCount; i++)
-    {
-        tempArray[i] = m_componet[i];
-    }
-
-    //Set the last value in the new array
-    tempArray[m_componetsCount] = actor_componet;
-    if (m_componetsCount > 1)
-        delete[] m_componet;
-
-    else if (m_componetsCount == 1)
-        delete m_componet;
-    m_componet = tempArray;
-    //increments the counter
-    m_componetsCount++;
-    //returns the pointer
-    return (T*)actor_componet;
-}
 
 template<typename T>
 inline T* Actor::getComponent()
@@ -221,6 +189,7 @@ inline bool Actor::removeComponent()
         delete(m_componet);
     }
     delete[] newArray;
+    
     //Return whether or not the removal was successful
     return componentRemoved;
 }

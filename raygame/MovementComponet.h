@@ -6,6 +6,7 @@ class MovementComponet :
 	public SteeringComponet
 {
 public:
+	
 	//base comstroctor for the movement
 	MovementComponet(Actor* actor);
 
