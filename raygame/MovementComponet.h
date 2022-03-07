@@ -32,7 +32,7 @@ public:
 	void update(float deltaTime) override;
 
 private:
-
+	Actor* m_actor;
 	float m_maxSpeed;
 	MathLibrary::Vector2 m_velocity;
 };

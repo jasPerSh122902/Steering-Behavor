@@ -1,6 +1,5 @@
 #pragma once
 #include "SteeringComponet.h"
-#include "Transform2D.h"
 #include "MovementComponet.h"
 #include "Transform2D.h"
 class SeekComponet :

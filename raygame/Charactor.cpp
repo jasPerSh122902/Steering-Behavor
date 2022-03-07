@@ -22,7 +22,7 @@ void Character::start()
 {
 	/*Movement* moveComponent = new Movement("MoveComponet");
 	addComponent(moveComponent);*/
-	m_moveComponet = dynamic_cast<MovementComponet*>(addComponent(new MovementComponet(m_moveComponet->getOwner())));
+	m_moveComponet = dynamic_cast<MovementComponet*>(addComponent(new MovementComponet(this)));
 	SpriteComponet* spriteComponent = new SpriteComponet("Sprite/Larrot.png");//This makes all enmey and players into the larrot
 	addComponent(spriteComponent);
 

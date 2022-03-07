@@ -14,7 +14,7 @@ public:
     Actor* getOwner() { return m_owner; }//returns a owner
     void setOwner(Actor* owner) { m_owner = owner; }//sets the owner
     Actor* getTarget() { return m_targetActor; }
-    int getTheRand();
+    float getTheRand();
 private:
     int m_radius;
     Actor* m_owner;

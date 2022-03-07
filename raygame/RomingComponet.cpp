@@ -1,7 +1,6 @@
 #include "RomingComponet.h"
 #include "MovementComponet.h"
 #include "Actor.h"
-#include <iostream>
 #include <time.h>
 
 RomingComponet::RomingComponet(Actor* owner,Actor* targetActor, int radius, int orderValue) : SteeringComponet::SteeringComponet(owner)
@@ -24,28 +23,35 @@ void RomingComponet::update(float deltaTime)
 		bool m_alowedToMove = true;
 
 		//made the circle
-		DrawCircle(getOwner()->getTransform()->getWorldPosition().x + 55, getOwner()->getTransform()->getWorldPosition().y + 55, m_radius, YELLOW);
+		//DrawCircle(getOwner()->getTransform()->getWorldPosition().x + 55, getOwner()->getTransform()->getWorldPosition().y + 55, m_radius, YELLOW);
+
 		if (m_alowedToMove)
 		{
-			//How to do (find a direction)
-			//then normalize
+			//getYour VectorOffset which is just a vector2 {5,0}
+			//add to your current Vector2 {6,0}
+			MathLibrary::Vector2  vectorOffSet{ 5,0 };
+			getOwner()->getTransform()->getWorldPosition().operator+(vectorOffSet) * m_radius;
 			//scale it up by the radius
-			m_desiredVelocity = { getOwner()->getTransform()->getWorldPosition().x + getTheRand(), getOwner()->getTransform()->getWorldPosition().y + getTheRand() };
+			/*m_desiredVelocity = { getOwner()->getTransform()->getWorldPosition().x + getTheRand(), getOwner()->getTransform()->getWorldPosition().y + getTheRand() };
 			MovementComponet* movement = new MovementComponet(m_owner);
-			movement->getOwner()->getComponent<MovementComponet>();
+			movement->getOwner()->getComponent<MovementComponet>();*/
 			//This way will break the reatreat and seek so dont do it
-			m_sterringForce = m_desiredVelocity - movement->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity
+			//m_sterringForce = m_desiredVelocity - movement->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity
 			//give the thing movement and add it to the vector
-			movement->setVelocity(movement->getVelocity() + m_sterringForce * deltaTime);
-			
+			//movement->setVelocity(movement->getVelocity() + m_sterringForce * deltaTime);
+			//geting a random point you do the Vector2 randpoint{getTheRand(), getTheRand()}.normalize() * m_radius;
+			//or
+			//Vector2 randpoint{cos(getTheRand(), sin(getTheRand()} * m_radius
+			MathLibrary::Vector2 randVector{getTheRand(), getTheRand() };
+			randVector.normalize() * m_radius;
 		}
 		m_alowedToMove2 = false;
 	}
 }
 
-int RomingComponet::getTheRand()
+float RomingComponet::getTheRand()
 {
-	int m_rand;
+	float m_rand;
 	//makes the rand only able to go to the radius
 	std::srand(time(0));
 	//makes two numbers for me

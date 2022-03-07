@@ -6,7 +6,7 @@
 MovementComponet::MovementComponet(Actor* actor) : SteeringComponet::SteeringComponet(actor)
 {
 	m_maxSpeed = 100;
-	m_velocity = MathLibrary::Vector2(0, 0);
+
 }
 
 void MovementComponet::update(float deltaTime)

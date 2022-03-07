@@ -13,13 +13,16 @@ private:
 	float m_maxVelocity;
 	float m_force;
 	MovementComponet* m_moveComponet;
-	DynamicArray<SteeringComponet* > m_steeringCompont;
+	DynamicArray<SteeringComponet*> m_steeringCompont;
 public:
 	//basic constuctor for the agent
 	Agent();
+	Agent(float maxForce, float force);
 	~Agent();
 	void onAddComponet(Componet* comp);
 	float getforce() { return m_force; }
 	float setForce(float force) { m_force = force; }
+	void start() override;
+	void update(float deltaTime) override;
 };
 

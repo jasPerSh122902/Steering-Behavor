@@ -15,11 +15,10 @@ void SeekComponet::update(float deltaTime)
 	m_desiredVelocity = MathLibrary::Vector2::normalize(getTarget()->getTransform()->getWorldPosition() - getOwner()->getTransform()->getWorldPosition()) * m_seekForce;
 	//makes a pointer to the movecomponet and casts it as a movement componet pointer...
 	//..to get its owners componet that is "MoveComponet"
-	MovementComponet* movement = new MovementComponet(movement->getOwner());
-	movement->getOwner()->getComponent<MovementComponet>();
+	MovementComponet* movement = new MovementComponet(getOwner());
 	//This way will break the reatreat and seek so dont do it
 	m_sterringForce = m_desiredVelocity - movement->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity
 	//give the thing movement and add it to the vector
-	movement->setVelocity(movement->getVelocity() + m_sterringForce * deltaTime);
+	movement->setVelocity({ 10000000,1000 });
 }
 

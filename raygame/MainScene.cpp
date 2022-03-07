@@ -14,8 +14,6 @@ void MainScene::start()
 	addActor(agent);*/
 
 	Enemy* enemy = new Enemy(400, 300, "Enemy", 600, 10, player);//used the contructor of the plaeyr and put in the values
-	enemy->getTheMoveComponet()->setVelocity({1,1});
 	enemy->getTransform()->setScale({ 100,100 });//set how big the enemy will be on the x and y
 	addActor(enemy);//added the enemy to the scene
-
 }
