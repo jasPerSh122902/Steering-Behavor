@@ -10,7 +10,8 @@ Player::Player(float x, float y, const char* name, float speed, int maxHealth) :
 void Player::start()
 {
 	Character::start();
-	m_inputComponet = dynamic_cast<InputComponet*>(addComponent(new InputComponet(this)));
+
+	m_inputComponet = dynamic_cast<InputComponet*>(addComponent(new InputComponet()));
 }
 
 void Player::update(float deltaTime)

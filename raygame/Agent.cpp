@@ -1,6 +1,7 @@
 #include "Agent.h"
 #include "MovementComponet.h"
 #include "SteeringComponet.h"
+#include "SpriteComponet.h"
 
 void Agent::onAddComponet(Componet* comp)
 {
@@ -13,6 +14,7 @@ void Agent::onAddComponet(Componet* comp)
 void Agent::start()
 {
 	m_moveComponet = addComponent<MovementComponet>();
+	m_moveComponet->setMaxSpeed(450);
 	
 }
 

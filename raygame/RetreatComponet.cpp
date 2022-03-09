@@ -1,22 +1,23 @@
 #include "RetreatComponet.h"
 #include "Actor.h"
 #include "MovementComponet.h"
+#include "Transform2D.h"
+#include "Agent.h"
 
-RetreatComponet::RetreatComponet(Actor* targetActor, Actor* owner) 
+
+
+MathLibrary::Vector2 RetreatComponet::calculateForce()
 {
-	m_targetActor = targetActor;
-	m_seekForce = 150;
-}
+	if (!getTarget())
+		return{ 0,0 };
 
-void RetreatComponet::update(float deltaTime)
-{
-	//gets the distence between the owner and the target
-	m_desiredVelocity = MathLibrary::Vector2::normalize(getOwner()->getTransform()->getWorldPosition() - getTarget()->getTransform()->getWorldPosition()) * m_seekForce;
-	//makes a pointer to the movecomponet and casts it as a movement componet pointer...
-	//..to get its owners componet that is "MoveComponet"
+	setSteeringForce(254);
 
-	//will break the seek and retreat
-	m_sterringForce = m_desiredVelocity - m_movementComp->getVelocity();//will allow the force to be the desired velocity subtracted by the owners velocity
-	//give the thing movement and add it to the vector
-	m_movementComp->setVelocity(m_movementComp->getVelocity() + m_sterringForce * deltaTime);
+	MathLibrary::Vector2 directionToTarget = (getOwner()->getTransform()->getWorldPosition()
+		- getTarget()->getTransform()->getWorldPosition());
+	MathLibrary::Vector2 desriedVelocity = directionToTarget.normalize() * getSteeringForce();
+
+	MathLibrary::Vector2 seekForce = directionToTarget - getAgent()->getMoveComponet()->getVelocity();
+
+	return seekForce;
 }

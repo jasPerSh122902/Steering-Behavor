@@ -7,10 +7,9 @@ class InputComponet :
 	public Componet
 {
 public:
-	InputComponet(Actor* owner);
+	InputComponet() : Componet::Componet() {}
 
 	MathLibrary::Vector2 getMoveAxis();
-	void update(float deltaTime) override;
 
 private:
 

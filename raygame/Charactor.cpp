@@ -1,14 +1,11 @@
 #include "Charactor.h"
 #include "MovementComponet.h"
 #include "SpriteComponet.h"
-//#include "HealthComp.h"
 
 Character::Character(float x, float y, const char* name, float speed, int maxHealth) :
 	Actor::Actor(x, y, name)
 {
 	m_speed = speed;
-	m_firingCooldown = 0.6f;
-	m_maxHealth = maxHealth;
 }
 
 Character::~Character()
@@ -20,9 +17,9 @@ Character::~Character()
 /// </summary>
 void Character::start()
 {
-	m_moveComponet = addComponent<MovementComponet>();
 	SpriteComponet* spriteComponent = new SpriteComponet("Sprite/Larrot.png");//This makes all enmey and players into the larrot
 	addComponent(spriteComponent);
+	m_moveComponet = addComponent<MovementComponet>();
 
 	Actor::start();
 }

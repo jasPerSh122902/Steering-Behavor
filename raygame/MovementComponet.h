@@ -1,14 +1,14 @@
 #pragma once
 #include <Vector2.h>
-#include "SteeringComponet.h"
+#include "Componet.h"
 
 class MovementComponet :
-	public SteeringComponet
+	public Componet
 {
 public:
 	
 	//base comstroctor for the movement
-	MovementComponet(Actor* actor);
+	MovementComponet() : Componet::Componet() {}
 
 	/// <summary>
 	/// Gets the current speed and direction of theis actor in the form of a velocity
@@ -33,7 +33,6 @@ public:
 	void update(float deltaTime) override;
 
 private:
-	Actor* m_actor;
 	float m_maxSpeed;
 	MathLibrary::Vector2 m_velocity;
 };

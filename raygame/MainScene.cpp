@@ -5,6 +5,7 @@
 #include "Agent.h"
 #include "SpriteComponet.h"
 #include "SeekComponet.h"
+#include "MovementComponet.h"
 
 void MainScene::start()
 {
@@ -14,13 +15,14 @@ void MainScene::start()
 
 
 	Agent* agent = new Agent();
-	agent->setMaxForce(5);
+	agent->getTransform()->setScale({ 50, 50 });
+	agent->setMaxForce(44);
 	agent->addComponent( new SpriteComponet("Sprite/Larrot.png"));//This makes all enmey and players into the larrot
-	agent->addComponent(new SeekComponet());
-	playerMove->setVelocity({ 1,1 });
+	SeekComponet* comp = new SeekComponet();
+	comp->setTarget(player);
+	agent->addComponent(comp);
+	
 	addActor(player);//added that plaeyr to the scene
 	addActor(agent);
-	//Enemy* enemy = new Enemy(400, 300, "Enemy", 600, 10, player);//used the contructor of the plaeyr and put in the values
-	//enemy->getTransform()->setScale({ 100,100 });//set how big the enemy will be on the x and y
-	//addActor(enemy);//added the enemy to the scene
+
 }

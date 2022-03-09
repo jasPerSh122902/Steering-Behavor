@@ -98,8 +98,8 @@ public:
     /// </summary>
     /// <param name="actor_componet"></param>
     /// <returns></returns>
-    //template<typename T>
-  //  T* addComponent();
+    template<typename T>
+    T* addComponent();
 
     /// <summary>
     /// adds the first componet instace attached to this actor
@@ -155,6 +155,41 @@ inline T* Actor::getComponent()
     }
     //returns nullprtr if the componet is not in the list
     return nullptr;
+}
+
+template<typename T>
+inline T* Actor::addComponent()
+{
+    T* component = new T();
+    //Return null if this component has an owner already
+    Actor* owner = component->getOwner();
+    if (owner)
+        return nullptr;
+
+    component->assignOwner(this);
+
+    //Create a new array with a size one greater than our old array
+    Componet** appendedArray = new Componet * [m_componetsCount + 1];
+    //Copy the values from the old array to the new array
+    for (int i = 0; i < m_componetsCount; i++)
+    {
+        appendedArray[i] = m_componet[i];
+    }
+
+    //Set the last value in the new array to be the actor we want to add
+    appendedArray[m_componetsCount] = component;
+    if (m_componetsCount > 1)
+        //Set old array to hold the values of the new array
+        delete[] m_componet;
+    else if (m_componetsCount == 1)
+        delete m_componet;
+
+    m_componet = appendedArray;
+    m_componetsCount++;
+
+    onAddComponet(component);
+
+    return (T*)component;
 }
 
 template<typename T>
