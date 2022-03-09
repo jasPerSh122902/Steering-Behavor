@@ -1,8 +1,8 @@
 #pragma once
 #include "Charactor.h"
-#include "MovementComponet.h"
-#include "RetreatComponet.h"
 
+class RetreatComponet;
+class MovementComponet;
 class Enemy :
 	public Character
 {

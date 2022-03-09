@@ -13,13 +13,17 @@ void Agent::onAddComponet(Componet* comp)
 
 void Agent::start()
 {
+	Actor::start();
+
 	m_moveComponet = addComponent<MovementComponet>();
-	m_moveComponet->setMaxSpeed(450);
+	m_moveComponet->setMaxSpeed(500);
+	m_moveComponet->setUpdateFaceing(true);
 	
 }
 
 void Agent::update(float deltaTime)
 {
+	Actor::update(deltaTime);
 	//gets all frce being applied from the steering behaviours
 	for  (int i= 0; i < m_steeringCompont.getLength(); i++)
 	{

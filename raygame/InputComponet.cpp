@@ -1,5 +1,4 @@
 #include "InputComponet.h"
-#include "Actor.h"
 #include "Transform2D.h"
 
 MathLibrary::Vector2 InputComponet::getMoveAxis()

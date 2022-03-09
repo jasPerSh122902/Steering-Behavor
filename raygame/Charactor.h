@@ -3,7 +3,6 @@
 #include <Vector2.h>
 class MovementComponet;
 
-
 class Character :
 	public Actor
 {

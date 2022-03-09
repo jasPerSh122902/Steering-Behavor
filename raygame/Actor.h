@@ -140,8 +140,6 @@ protected:
     const char* m_name;
 };
 
-
-
 template<typename T>
 inline T* Actor::getComponent()
 {
