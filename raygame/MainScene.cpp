@@ -14,8 +14,8 @@ void MainScene::start()
 	player->getTransform()->setScale({ 70,70 });//set how big the player will be on the x and y
 	MovementComponet* playerMove = player->addComponent<MovementComponet>();
 
-	for (size_t i = 0; i < 1000; i++)
-	{
+	//for (size_t i = 0; i < 10; i++)
+	//{
 		Agent* agent = new Agent();
 		agent->getTransform()->setScale({ 50, 50 });
 		agent->setMaxForce(500);
@@ -31,7 +31,7 @@ void MainScene::start()
 		agent->addComponent(seekingComp);
 		agent->addComponent<StateMachineComponet>();
 		addActor(agent);
-	}
+	//}
 	
 
 	//agent added 
