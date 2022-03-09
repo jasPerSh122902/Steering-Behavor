@@ -61,7 +61,7 @@
     <ClCompile Include="RomingComponet.cpp">
       <Filter>Sorce\Componets</Filter>
     </ClCompile>
-    <ClCompile Include="SteeringComponet.cpp">
+    <ClCompile Include="StateMachineComponet.cpp">
       <Filter>Sorce\Componets</Filter>
     </ClCompile>
   </ItemGroup>
@@ -127,6 +127,9 @@
       <Filter>Header\Transform/ActorArray</Filter>
     </ClInclude>
     <ClInclude Include="SteeringComponet.h">
+      <Filter>Header\Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachineComponet.h">
       <Filter>Header\Componets</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,6 +6,7 @@
 #include "SeekComponet.h"
 #include "MovementComponet.h"
 #include "RomingComponet.h"
+#include "StateMachineComponet.h"
 
 void MainScene::start()
 {
@@ -13,17 +14,30 @@ void MainScene::start()
 	player->getTransform()->setScale({ 70,70 });//set how big the player will be on the x and y
 	MovementComponet* playerMove = player->addComponent<MovementComponet>();
 
-	Agent* agent = new Agent();
-	agent->getTransform()->setScale({ 50, 50 });
-	agent->setMaxForce(44);
-	agent->addComponent(new SpriteComponet("Sprite/Larrot.png"));//This makes all enmey and players into the larrot
-	RomingComponet* romingcomp = new RomingComponet(10, 20, 50);
-	//SeekComponet* comp = new SeekComponet();
-	//comp->setTarget(player);
-	agent->addComponent(romingcomp);
-	//agent->addComponent(comp);
+	for (size_t i = 0; i < 1000; i++)
+	{
+		Agent* agent = new Agent();
+		agent->getTransform()->setScale({ 50, 50 });
+		agent->setMaxForce(500);
+		agent->addComponent(new SpriteComponet("Sprite/Larrot.png"));//This makes all enmey and players into the larrot
+
+		RomingComponet* romingComp = new RomingComponet(100, 200, 300);
+		agent->addComponent(romingComp);
+
+		SeekComponet* seekingComp = new SeekComponet();
+		seekingComp->setSteeringForce(200);
+		seekingComp->setTarget(player);
+
+		agent->addComponent(seekingComp);
+		agent->addComponent<StateMachineComponet>();
+		addActor(agent);
+	}
+	
 
 	//agent added 
-	addActor(agent);
-	addActor(player);//added that plaeyr to the scene
+	addActor(player);
+	
+
+
+	
 }

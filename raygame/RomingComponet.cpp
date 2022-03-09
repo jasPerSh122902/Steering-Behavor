@@ -14,6 +14,8 @@ RomingComponet::RomingComponet(float circleDistance, float circleRadius, float w
 
 MathLibrary::Vector2 RomingComponet::calculateForce()
 {
+	if (getSteeringForce() == 0)
+		return { 0,0 };
 	//finds the agnets poitin and heading
 	MathLibrary::Vector2 ownerPos = getOwner()->getTransform()->getWorldPosition();//gets the worldposition for the owner or agent
 	MathLibrary::Vector2 heading = (getAgent()->getMoveComponet()->getVelocity());//gets the agnets velocity

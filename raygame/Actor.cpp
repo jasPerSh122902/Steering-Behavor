@@ -105,7 +105,7 @@ void Actor::update(float deltaTime)
 {
     for (int i = 0; i < m_componetsCount; i++)
     {
-        if (m_componet[i]->getStarted())
+        if (!m_componet[i]->getStarted())
             m_componet[i]->start();
 
         m_componet[i]->update(deltaTime);

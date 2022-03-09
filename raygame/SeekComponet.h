@@ -5,6 +5,5 @@ class SeekComponet :
 {
 public:
 	MathLibrary::Vector2 calculateForce() override;
-	
 };
 

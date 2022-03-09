@@ -2,6 +2,7 @@
 #include "MovementComponet.h"
 #include "SteeringComponet.h"
 #include "SpriteComponet.h"
+#include <iostream>
 
 void Agent::onAddComponet(Componet* comp)
 {
