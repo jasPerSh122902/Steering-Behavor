@@ -38,7 +38,7 @@
       <Filter>Sorce\Scene/Engine</Filter>
     </ClCompile>
     <ClCompile Include="Transform2D.cpp">
-      <Filter>Sorce\Transform/ActorArray</Filter>
+      <Filter>Sorce\Transform/ActorArray/Decision</Filter>
     </ClCompile>
     <ClCompile Include="Componet.cpp">
       <Filter>Sorce\Componets</Filter>
@@ -63,6 +63,12 @@
     </ClCompile>
     <ClCompile Include="StateMachineComponet.cpp">
       <Filter>Sorce\Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="Decision.cpp">
+      <Filter>Sorce\Transform/ActorArray/Decision</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanDecisions.cpp">
+      <Filter>Sorce\Transform/ActorArray/Decision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,7 +109,7 @@
       <Filter>Header\Actors</Filter>
     </ClInclude>
     <ClInclude Include="Transform2D.h">
-      <Filter>Header\Transform/ActorArray</Filter>
+      <Filter>Header\Transform/ActorArray/Decision</Filter>
     </ClInclude>
     <ClInclude Include="CircleCollider.h">
       <Filter>Header\Collider</Filter>
@@ -124,13 +130,19 @@
       <Filter>Header\Componets</Filter>
     </ClInclude>
     <ClInclude Include="DynamicArray.h">
-      <Filter>Header\Transform/ActorArray</Filter>
+      <Filter>Header\Transform/ActorArray/Decision</Filter>
     </ClInclude>
     <ClInclude Include="SteeringComponet.h">
       <Filter>Header\Componets</Filter>
     </ClInclude>
     <ClInclude Include="StateMachineComponet.h">
       <Filter>Header\Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="Decision.h">
+      <Filter>Header\Transform/ActorArray/Decision</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanDecisions.h">
+      <Filter>Header\Transform/ActorArray/Decision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -160,17 +172,11 @@
     <Filter Include="Sorce\Collider">
       <UniqueIdentifier>{1b2a78ba-e406-49b3-87ac-3360847aeecd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sorce\Transform/ActorArray">
-      <UniqueIdentifier>{4f768e08-8fd2-4e2c-819b-0da1679af520}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sorce\Componets">
       <UniqueIdentifier>{2d526dfb-3932-4daa-8cf1-b82af53f8de4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header\Collider">
       <UniqueIdentifier>{c78a1214-04aa-445b-9e4d-af0bcf18e4c0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\Transform/ActorArray">
-      <UniqueIdentifier>{00cfb5f2-f50d-4723-a86e-a14656d34f3b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header\Scene/Engine">
       <UniqueIdentifier>{69362da4-4871-4d3e-9a20-40087fe877ff}</UniqueIdentifier>
@@ -180,6 +186,12 @@
     </Filter>
     <Filter Include="Header\Componets">
       <UniqueIdentifier>{56361bfb-3ddd-432d-8539-a0cc3912c0a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sorce\Transform/ActorArray/Decision">
+      <UniqueIdentifier>{4f768e08-8fd2-4e2c-819b-0da1679af520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Transform/ActorArray/Decision">
+      <UniqueIdentifier>{00cfb5f2-f50d-4723-a86e-a14656d34f3b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
