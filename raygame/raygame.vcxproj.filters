@@ -38,7 +38,7 @@
       <Filter>Sorce\Scene/Engine</Filter>
     </ClCompile>
     <ClCompile Include="Transform2D.cpp">
-      <Filter>Sorce\Transform/ActorArray/Decision</Filter>
+      <Filter>Sorce\Transform</Filter>
     </ClCompile>
     <ClCompile Include="Componet.cpp">
       <Filter>Sorce\Componets</Filter>
@@ -64,11 +64,17 @@
     <ClCompile Include="StateMachineComponet.cpp">
       <Filter>Sorce\Componets</Filter>
     </ClCompile>
-    <ClCompile Include="Decision.cpp">
-      <Filter>Sorce\Transform/ActorArray/Decision</Filter>
+    <ClCompile Include="DecisionComponent.cpp">
+      <Filter>Sorce\Componets</Filter>
     </ClCompile>
     <ClCompile Include="BooleanDecisions.cpp">
-      <Filter>Sorce\Transform/ActorArray/Decision</Filter>
+      <Filter>Sorce\Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Decision.cpp">
+      <Filter>Sorce\Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="inRangeDecisions.cpp">
+      <Filter>Sorce\Decisions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,7 +115,7 @@
       <Filter>Header\Actors</Filter>
     </ClInclude>
     <ClInclude Include="Transform2D.h">
-      <Filter>Header\Transform/ActorArray/Decision</Filter>
+      <Filter>Header\Transform/ActorArray</Filter>
     </ClInclude>
     <ClInclude Include="CircleCollider.h">
       <Filter>Header\Collider</Filter>
@@ -130,7 +136,7 @@
       <Filter>Header\Componets</Filter>
     </ClInclude>
     <ClInclude Include="DynamicArray.h">
-      <Filter>Header\Transform/ActorArray/Decision</Filter>
+      <Filter>Header\Transform/ActorArray</Filter>
     </ClInclude>
     <ClInclude Include="SteeringComponet.h">
       <Filter>Header\Componets</Filter>
@@ -138,11 +144,17 @@
     <ClInclude Include="StateMachineComponet.h">
       <Filter>Header\Componets</Filter>
     </ClInclude>
-    <ClInclude Include="Decision.h">
-      <Filter>Header\Transform/ActorArray/Decision</Filter>
+    <ClInclude Include="DecisionComponent.h">
+      <Filter>Header\Componets</Filter>
     </ClInclude>
     <ClInclude Include="BooleanDecisions.h">
-      <Filter>Header\Transform/ActorArray/Decision</Filter>
+      <Filter>Header\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Decision.h">
+      <Filter>Header\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="inRangeDecisions.h">
+      <Filter>Header\Decisions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -187,10 +199,16 @@
     <Filter Include="Header\Componets">
       <UniqueIdentifier>{56361bfb-3ddd-432d-8539-a0cc3912c0a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sorce\Transform/ActorArray/Decision">
+    <Filter Include="Sorce\Decisions">
+      <UniqueIdentifier>{8f940b12-aa23-408b-8c36-f625f600b8dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Decisions">
+      <UniqueIdentifier>{bc338a4f-de58-4d9f-bc11-19f1a8fa09c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sorce\Transform">
       <UniqueIdentifier>{4f768e08-8fd2-4e2c-819b-0da1679af520}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header\Transform/ActorArray/Decision">
+    <Filter Include="Header\Transform/ActorArray">
       <UniqueIdentifier>{00cfb5f2-f50d-4723-a86e-a14656d34f3b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

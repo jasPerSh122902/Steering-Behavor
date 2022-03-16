@@ -4,6 +4,13 @@
 #include "SpriteComponet.h"
 #include <iostream>
 
+Agent::Agent(float x, float y, const char* name, float maxSpeed, float maxForce)
+{
+	setMaxForce(maxForce);
+	m_moveComponet = addComponent<MovementComponet>();
+	m_moveComponet->setMaxSpeed(maxSpeed);
+}
+
 void Agent::onAddComponet(Componet* comp)
 {
 	SteeringComponet* steeringComponet = dynamic_cast<SteeringComponet*>(comp);
