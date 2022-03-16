@@ -1,10 +1,8 @@
 #pragma once
+#include "Decision.h"
 
-class Agent;
-/// <summary>
-/// Abstract class for all decisions
-/// </summary>
-class Decision
+class RomingDecision :
+	public Decision
 {
 public:
 	/// <summary>
@@ -12,6 +10,6 @@ public:
 	/// </summary>
 	/// <param name="actor">The thing that is being checked</param>
 	/// <returns>a a decision that sets the steering force</returns>
-	virtual void makeDecision(Agent* actor, float deltaTime) = 0;
+	void makeDecision(Agent* actor, float deltaTime) override;
 };
 

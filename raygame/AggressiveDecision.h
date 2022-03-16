@@ -1,10 +1,12 @@
 #pragma once
 #include "BooleanDecisions.h"
-class inRangeDecisions :
+
+class AggressiveDecision :
 	public BooleanDecisions
 {
 public:
-	inRangeDecisions(Decision* left = nullptr, Decision* right = nullptr) : BooleanDecisions(left, right) {};
+	AggressiveDecision(Decision* left = nullptr, Decision* right = nullptr) : BooleanDecisions(left, right) {};
+	/// <summary>
 	/// <summary>
 	/// Will check the current condition for that actor to see if it is true or false
 	/// </summary>

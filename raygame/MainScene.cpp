@@ -12,7 +12,7 @@ void MainScene::start()
 
 	//Agent* agent = new Agent(200,200,"Agent", 150,150);
 	
-	Enemy* enemy = new Enemy(150,150, "Enemey", 150, 150, player);
+	Enemy* enemy = new Enemy(250,250, "Enemey", 150, 150, player);
 
 	addActor(enemy);
 	addActor(player);

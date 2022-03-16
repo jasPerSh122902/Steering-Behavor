@@ -76,6 +76,18 @@
     <ClCompile Include="inRangeDecisions.cpp">
       <Filter>Sorce\Decisions</Filter>
     </ClCompile>
+    <ClCompile Include="AggressiveDecision.cpp">
+      <Filter>Sorce\Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleDecision.cpp">
+      <Filter>Sorce\Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="RomingDecision.cpp">
+      <Filter>Sorce\Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekDecision.cpp">
+      <Filter>Sorce\Decisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputComponet.h">
@@ -154,6 +166,18 @@
       <Filter>Header\Decisions</Filter>
     </ClInclude>
     <ClInclude Include="inRangeDecisions.h">
+      <Filter>Header\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="AggressiveDecision.h">
+      <Filter>Header\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleDecision.h">
+      <Filter>Header\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="RomingDecision.h">
+      <Filter>Header\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekDecision.h">
       <Filter>Header\Decisions</Filter>
     </ClInclude>
   </ItemGroup>

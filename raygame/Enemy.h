@@ -1,7 +1,6 @@
 #pragma once
 #include "Agent.h"
 
-class RetreatComponet;
 class Enemy :
 	public Agent
 {
@@ -11,11 +10,17 @@ public:
 
 	void start() override;
 	void update(float deltaTime) override;
+	
+	bool getTargetInRange();
 
 	Actor* getTarget() { return m_targetActor; }
 	void setTarget(Actor* targetActor) { m_targetActor = targetActor; }
 
+	bool getIsAgressive() { return m_isAgressive; }
+	void setAgressive(bool isAgressive) {m_isAgressive = isAgressive ; }
+
 private:
 	Actor* m_targetActor;
+	bool m_isAgressive;
 };
 

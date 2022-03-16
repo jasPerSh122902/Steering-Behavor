@@ -13,7 +13,6 @@ void BooleanDecisions::makeDecision(Agent* actor, float deltaTime)
 		if (m_no)
 			m_no->makeDecision(actor, deltaTime);
 	}
-	
 }
 
 BooleanDecisions::BooleanDecisions(Decision* left, Decision* right)
