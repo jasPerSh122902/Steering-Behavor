@@ -51,7 +51,10 @@ void Enemy::update(float deltaTime)
 }
 
 bool Enemy::getTargetInRange()
-{
+{	
 	float distance = (m_targetActor->getTransform()->getWorldPosition() - getTransform()->getWorldPosition()).getMagnitude();
-	return distance <= 222;
+	//gets the diection
+	MathLibrary::Vector2 diection = (m_targetActor->getTransform()->getWorldPosition() - getTransform()->getWorldPosition()).getNormalized();
+	//makes the target in range return a cone of vision
+	return distance <= 250 && acos(MathLibrary::Vector2::dotProduct(diection, getTransform()->getForward())) < 1;
 }
